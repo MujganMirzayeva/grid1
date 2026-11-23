@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <style>
+        body {
+            margin: 0;
+            background: white;
+        }
+
+        header,
+        article,
+        nav,
+        aside,
+        footer {
+            background: hotpink;
+            padding: 15px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: 20px 60px 20px;
+            gap: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 1000px;
+                margin: auto;
+                grid-template-columns: 70% 17% 13%;
+                grid-template-rows: 100px 400px 100px;
+                gap: 10px;
+            }
+
+            header {
+                grid-area: 1 / 1 / span 1 / span 3;
+            }
+
+            article {
+                grid-area: 2 / 1 / span 1 / span 1;
+            }
+
+            nav {
+                grid-area: 2 / 2 / span 1 / span 1;
+            }
+
+            aside {
+                grid-area: 2 / 3 / span 1 / span 1;
+            }
+
+            footer {
+                grid-area: 3 / 1 / span 1 / span 3;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>Header</header>
+        <article>Article</article>
+        <nav>Nav</nav>
+        <aside>Ads</aside>
+        <footer>Footer</footer>
+    </div>
+</body>
+
+</html>

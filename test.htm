@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body{
+                margin: 0;
+                background: silver;
+            }
+                header { grid-area:h; background: orange;}
+                nav    { grid-area:n; background: yellow;}
+                main   { grid-area:m; background: white;}
+                aside  { grid-area:a; background: gray;}
+                footer { grid-area:f; background: red;}
+
+                .container{
+                    display: grid;
+                    grid-template-rows: 100px 50px 500px 90px 40px;
+                    grid-template-areas: 'h' 'n' 'm' 'a' 'f';
+                }
+                @media (min-width: 768px) {
+                .container {
+                    max-width: 1000px;
+                    margin: auto;
+                    grid-template-columns: 20% auto 160px;
+                    grid-template-rows: 100px 500px 40px;
+                    grid-template-areas: 'h   h    h' 
+                                         'n   m    a'
+                                         'n   f    f' 
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header></header>
+            <nav></nav>
+            <main></main>
+            <aside></aside>
+            <footer></footer>
+        </div>
+    </body>
+</html>

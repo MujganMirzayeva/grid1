@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <style>
+        body {
+            margin: 0;
+            background: white;
+        }
+
+        header,nav,article,aside,footer {
+            background: #ff52d1;
+            padding: 15px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: 25px 75px 75px 75px 75px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 1000px;
+                margin: auto;
+                grid-template-columns: 25% 75%;
+                grid-template-rows: 100px 300px 100px 100px;
+                gap: 10px;
+            }
+
+            header {grid-area: 1 / 2 / span 1 / span 1;}
+            nav {grid-area: 1 / 1 / span 4 / span 1;}
+            article {grid-area: 2 / 2 / span 1 / span 1;}
+            aside {grid-area: 3 / 2 / span 1 / span 1;}
+            footer {grid-area: 4 / 2 / span 1 / span 1;}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>Header</header>
+        <nav>Nav</nav>
+        <article>Article</article>
+        <aside>Ads</aside>
+        <footer>Footer</footer>
+    </div>
+</body>
+
+</html>

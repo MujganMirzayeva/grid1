@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Grid</title>
+        <style>
+          body{
+            margin: 0;
+            background: white;
+          }
+          header,nav,article,aside,footer{
+            padding: 10px;
+            background-color: magenta ;
+          }
+          header{grid-area: h;}
+          nav{grid-area: n;}
+          article{grid-area: a;}
+          aside{grid-area: s;}
+          footer{grid-area: f;}
+
+          .container{
+            display: grid;
+            grid-template-rows: 20px 100px;
+            grid-template-areas: 'h' 'n' 'a' 's' 'f';
+            gap: 15px;
+          }
+          @media (min-width:768px){
+            .container{
+                max-width: 1000px;
+                margin: auto;
+                grid-template-columns: 20% 65% 15%;
+                grid-template-rows: 100px 400px 80px;
+                grid-template-areas: 'h   h    h'
+                                     'n   a    s'
+                                     'n   f    f'
+            }
+          }
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <header>Header</header>
+        <nav>Nav</nav>
+        <article>Article</article>
+        <aside>Ads</aside>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>
